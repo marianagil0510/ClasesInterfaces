@@ -13,7 +13,8 @@ public class Main {
          * 4. Crear clase administrador heredada de la clase empleado con la variable role
          * 5. Crear interfaces para la clase administrador y empleado con la invocación de los métodos, obtener salario, cambiar estado de activo y listar activos
          * 6. Crear clases que extiendan de su respectivas interfaces e implementar los métodos con su lógica
-         * 7. Crear una lista con 7 empleados e instanciar un administrados
+         * 6.1 Crear en repositorio una clase que nos retorne una lista de empleados y otra que retorne un administrador
+         * 7. Crear una lista con 7 empleados e instanciar un administrador
          * 8. Obtener el promedio de los salarios
          * 9. Cambiar el estado de 3 empoleados a inactivos mediante el método de cambiar estado de activo
          * 10. Listar los empleados que queden activos

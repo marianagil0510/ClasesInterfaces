@@ -7,7 +7,7 @@ public class Person {
     private int age;
     private String email;
     private Integer phone;
-    private String address;
+    private Address address;
 
     public byte getIdPerson() {
         return idPerson;
@@ -57,11 +57,11 @@ public class Person {
         this.phone = phone;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 }
