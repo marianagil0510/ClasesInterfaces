@@ -14,12 +14,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     public long getSalary() {
         EmployeeRepository employeeRepository = new EmployeeRepository();
         List<Employee> employees = employeeRepository.getEmployees();
-        employees.get(5).getSalary();
-        int totalEmployees = employees.size();
-        //Realizar con for each
-        //for each (employees)
+        int totalEmployees = employees.size(); //Variable totalEmployees en la cual almacena la cantidad de empleados que tiene el arreglo o la lista de employees
+        long salary = 0L;
+        for (Employee employee: employees ) {
+            if (employee.getSalary()!=0L){
+                 salary = salary + employee.getSalary();
 
-        return 0;
+            }
+        }
+
+        return salary/totalEmployees;
     }
 
     @Override
