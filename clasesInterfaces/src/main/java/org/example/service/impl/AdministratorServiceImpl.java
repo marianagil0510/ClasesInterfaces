@@ -12,6 +12,7 @@ public class AdministratorServiceImpl implements AdministratorService {
     @Override
     public void changeStatus() {
 
+
     }
 
     @Override

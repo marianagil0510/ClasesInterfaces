@@ -28,11 +28,28 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void changeStatus() {
-
+        EmployeeRepository employeeRepository = new EmployeeRepository();
+        List<Employee> employees = employeeRepository.getEmployees();
+        int i =0;
+        for (Employee employee: employees){
+            if(i<3){
+                employee.setActive(false);
+                i++;
+                continue;
+            }
+        }
     }
 
     @Override
     public ArrayList<Employee> getActives() {
-        return null;
+        EmployeeRepository employeeRepository = new EmployeeRepository();
+        List<Employee> employees = employeeRepository.getEmployees();
+        List<Employee> employeesActive = new ArrayList<>();
+        for (Employee employee: employees){
+            if (employee.isActive()){
+                employeesActive.add(employee);
+            }
+        }
+        return (ArrayList<Employee>) employeesActive;
     }
 }

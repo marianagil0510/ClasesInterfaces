@@ -30,5 +30,6 @@ public class Main {
         System.out.println("El promedio de los empleados es: " + employeeService.getSalary());
         System.out.println("---------------------------------------------------------------------------------------");
         System.out.println("---------------------------------------------------------------------------------------");
+        System.out.println("Los empleados activos: " + employeeService.getActives());
     }
 }
