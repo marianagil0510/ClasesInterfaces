@@ -31,4 +31,13 @@ public class Employee extends Person{
     public void setActive(boolean active) {
         this.active = active;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "salary=" + salary +
+                ", startDate=" + startDate +
+                ", active=" + active +
+                '}';
+    }
 }

@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.model.Employee;
 import org.example.service.EmployeeService;
 import org.example.service.impl.EmployeeServiceImpl;
 
@@ -30,6 +31,20 @@ public class Main {
         System.out.println("El promedio de los empleados es: " + employeeService.getSalary());
         System.out.println("---------------------------------------------------------------------------------------");
         System.out.println("---------------------------------------------------------------------------------------");
-        System.out.println("Los empleados activos: " + employeeService.getActives());
+        System.out.println("Estado de empleados: ");
+        ArrayList<Employee> employees = employeeService.changeStatus();
+        System.out.println("Tamaño de la lista: " + employees.size());
+        employees.forEach(System.out::println);
+        System.out.println("---------------------------------------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------------------------------");
+        System.out.println("Empleados activos: ");
+        ArrayList<Employee> employeesActiveWithParams = employeeService.getActives(employees);
+        employeesActiveWithParams.forEach(System.out::println);
+        System.out.println("---------------------------------------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------------------------------");
+        System.out.println("Empleados activos: ");
+        ArrayList<Employee> employeesActiveWithOutParams = employeeService.getActives();
+        employeesActiveWithOutParams.forEach(System.out::println);
+        //System.out.println("Los empleados activos: " + employeeService.getActives());
     }
 }

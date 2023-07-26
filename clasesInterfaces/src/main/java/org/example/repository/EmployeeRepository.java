@@ -9,8 +9,8 @@ import java.util.Date;
 import java.util.List;
 
 public class EmployeeRepository {
-    public List<Employee> getEmployees(){
-        List<Employee> employees = new ArrayList<>();
+    public ArrayList<Employee> getEmployees(){
+        ArrayList<Employee> employees = new ArrayList<>();
 
         for (int i = 0; i <= 10; i++)
         {

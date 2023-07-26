@@ -27,24 +27,37 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void changeStatus() {
+    public ArrayList<Employee> changeStatus() {
         EmployeeRepository employeeRepository = new EmployeeRepository();
-        List<Employee> employees = employeeRepository.getEmployees();
+        ArrayList<Employee> employeesRepository = employeeRepository.getEmployees();
+        ArrayList<Employee> employees = new ArrayList<>();
         int i =0;
-        for (Employee employee: employees){
+        for (Employee employee: employeesRepository){
             if(i<3){
                 employee.setActive(false);
                 i++;
-                continue;
+
+            }
+            employees.add(employee);
+        }
+        return employees;
+    }
+
+    @Override
+    public ArrayList<Employee> getActives(ArrayList<Employee> employees) {
+        ArrayList<Employee> employeesActive = new ArrayList<>();
+        for (Employee employee: employees){
+            if (employee.isActive()){
+                employeesActive.add(employee);
             }
         }
+        return (ArrayList<Employee>) employeesActive;
     }
 
     @Override
     public ArrayList<Employee> getActives() {
-        EmployeeRepository employeeRepository = new EmployeeRepository();
-        List<Employee> employees = employeeRepository.getEmployees();
-        List<Employee> employeesActive = new ArrayList<>();
+        ArrayList<Employee> employees = this.changeStatus();
+        ArrayList<Employee> employeesActive = new ArrayList<>();
         for (Employee employee: employees){
             if (employee.isActive()){
                 employeesActive.add(employee);
